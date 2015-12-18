@@ -2,6 +2,8 @@
 
 namespace Codeception\Module\VisualCeption\Image;
 
+use Imagick;
+
 class ComparisonResult
 {
     private $deviation;
@@ -9,7 +11,7 @@ class ComparisonResult
     private $expectedImage;
     private $currentImage;
 
-    public function __construct($deviation, \Imagick $expectedImage, \Imagick $currentImage,  \Imagick $comparisonImage)
+    public function __construct($deviation, Imagick $expectedImage, Imagick $currentImage,  Imagick $comparisonImage)
     {
         $this->currentImage = $currentImage;
         $this->expectedImage = $expectedImage;

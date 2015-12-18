@@ -2,11 +2,13 @@
 
 namespace Codeception\Module\VisualCeption\Html;
 
+use Facebook\WebDriver\Remote\RemoteWebDriver;
+
 class Manipulation
 {
     private $webDriver;
 
-    public function __construct(\RemoteWebDriver $webDriver)
+    public function __construct(RemoteWebDriver $webDriver)
     {
         $this->webDriver = $webDriver;
         $this->injectJQuery();

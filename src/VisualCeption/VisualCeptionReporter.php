@@ -5,6 +5,9 @@
 
 namespace Codeception\Module;
 
+use Codeception\Module\VisualCeption\ImageDeviationException;
+use Codeception\TestCase;
+
 class VisualCeptionReporter extends \Codeception\Module
 {
     private $reporter;
@@ -40,7 +43,7 @@ class VisualCeptionReporter extends \Codeception\Module
         $this->reporter->finish();
     }
 
-    public function _failed(\Codeception\TestCase $test, $fail)
+    public function _failed(TestCase $test, $fail)
     {
         if ($fail instanceof ImageDeviationException) {
             $this->reporter->processFailure($fail);

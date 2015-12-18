@@ -2,6 +2,8 @@
 
 namespace Codeception\Module\VisualCeption\Image;
 
+use Imagick;
+
 class Comparison
 {
     /**
@@ -11,7 +13,7 @@ class Comparison
      * @param Imagick $image2
      * @return ComparisonResult
      */
-    public function compare(\Imagick $image1, \Imagick $image2)
+    public function compare(Imagick $image1, Imagick $image2)
     {
         $imagick1Size = $image1->getImageGeometry();
         $imagick2Size = $image2->getImageGeometry();

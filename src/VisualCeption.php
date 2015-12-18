@@ -9,6 +9,8 @@ use Codeception\Module\VisualCeption\Storage\Factory;
 use Codeception\Module\VisualCeption\Image\Comparison;
 use Codeception\Module\VisualCeption\Html\Screenshot;
 use Codeception\Module\VisualCeption\Html\Manipulation;
+use Codeception\TestCase;
+use Imagick;
 
 /**
  * Class VisualCeption
@@ -68,7 +70,7 @@ class VisualCeption extends \Codeception\Module
      * @param \Codeception\TestCase $test
      * @throws \Exception
      */
-    public function _before(\Codeception\TestCase $test)
+    public function _before(TestCase $test)
     {
         if (!$this->hasModule("WebDriver")) {
             throw new \Exception("VisualCeption uses the WebDriver. Please be sure that this module is activated.");
@@ -128,7 +130,7 @@ class VisualCeption extends \Codeception\Module
         return $this->getComparisonResult($expectedImage, $currentImage);
     }
 
-    private function getComparisonResult(\Imagick $expectedImage, \Imagick $currentImage)
+    private function getComparisonResult(Imagick $expectedImage, Imagick $currentImage)
     {
         try {
             $imageCompare = new Comparison();
