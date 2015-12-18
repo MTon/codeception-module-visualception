@@ -2,7 +2,7 @@
 
 namespace Codeception\Module\VisualCeption\Html;
 
-use Facebook\WebDriver\Remote\RemoteWebDriver;
+use RemoteWebDriver;
 
 class Manipulation
 {
