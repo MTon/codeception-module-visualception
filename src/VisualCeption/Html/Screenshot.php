@@ -2,9 +2,7 @@
 
 namespace Codeception\Module\VisualCeption\Html;
 
-
-
-use RemoteWebDriver;
+use Facebook\WebDriver\Remote\RemoteWebDriver;
 
 class Screenshot
 {
